@@ -19,9 +19,13 @@ app.post("/create-post", (req, res) => {
 
 		parsedFile[Date.now()] = req.fields.blogpost;
 
-		fs.writeFile(__dirname + "/data/posts.json", JSON.stringify(parsedFile), error => {console.log(error)});
+		fs.writeFile(__dirname + "/data/posts.json", JSON.stringify(parsedFile), error => {});
 	});
 	// console.log(req.fields.blogpost);
+});
+
+app.get("/get-posts", (req, res) => {
+	res.sendFile(__dirname + "/data/posts.json", error => {});
 });
 
 
