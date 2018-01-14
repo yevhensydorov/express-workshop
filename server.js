@@ -1,11 +1,10 @@
 const express = require("express");
+const formidable = require("express-formidable");
 const app = express();
+app.use(express.static("public"));
+app.use(formidable());
 
-app.get("/", (req, res) => res.send("Yay Node Girls"));
-
-app.get("/node", (req, res) => res.send("Its a Node route!"));
-
-app.get("/girls", (req, res) => res.send("Its a Girls route!"));
+app.post("/create-post", (req, res) => console.log(req.fields));
 
 
 app.listen(3000, () => console.log(`Server is listening on port 3000. Ready to accept requests!`));
