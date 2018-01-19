@@ -13,11 +13,12 @@ app.use(express.static("public"));
 app.use(formidable());
 
 app.post("/create-post", (req, res) => {
-	fs.readFile(__dirname + '/data/posts.json', (error, file) => {
+	fs.readFile(__dirname + "/data/posts.json", (error, file) => {
 		const parsedFile = JSON.parse(file);
 		// console.log(file.toString());
 
 		parsedFile[Date.now()] = req.fields.blogpost;
+		
 
 		fs.writeFile(__dirname + "/data/posts.json", JSON.stringify(parsedFile), error => {});
 	});
@@ -26,6 +27,15 @@ app.post("/create-post", (req, res) => {
 
 app.get("/get-posts", (req, res) => {
 	res.sendFile(__dirname + "/data/posts.json", error => {});
+});
+
+app.get("/posts/:postId", (req, res) => {
+	// res.send(`post id: ${req.params.postId}`)
+	fs.readFile(__dirname + "data/posts.json", (error, file) => {
+		// const parsedFile = JSON.parse(file);
+		// console.log(file.toString());
+		// res.send(parsedFile[":postId"]);
+	});
 });
 
 
