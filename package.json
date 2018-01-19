@@ -1,0 +1,20 @@
+{
+  "name": "express-workshop",
+  "version": "1.0.0",
+  "description": "This is the exercise that accompanies the first Node class. Based on the Node Girls Workshop https://github.com/node-girls/express-workshop",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yevhensydorov/express-workshop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yevhensydorov/express-workshop/issues"
+  },
+  "homepage": "https://github.com/yevhensydorov/express-workshop#readme"
+}

@@ -30,11 +30,11 @@ app.get("/get-posts", (req, res) => {
 });
 
 app.get("/posts/:postId", (req, res) => {
-	// res.send(`post id: ${req.params.postId}`)
+	res.send(`post id: ${req.params.postId}`)
 	fs.readFile(__dirname + "data/posts.json", (error, file) => {
 		// const parsedFile = JSON.parse(file);
 		// console.log(file.toString());
-		// res.send(parsedFile[":postId"]);
+		// res.send(parsedFile["req.params.postId"]);
 	});
 });
 
