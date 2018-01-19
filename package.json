@@ -1,20 +1,23 @@
 {
-  "name": "express-workshop",
+  "name": "github",
   "version": "1.0.0",
-  "description": "This is the exercise that accompanies the first Node class. Based on the Node Girls Workshop https://github.com/node-girls/express-workshop",
+  "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yevhensydorov/express-workshop.git"
   },
-  "author": "",
+  "author": "Eugene",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/yevhensydorov/express-workshop/issues"
   },
-  "homepage": "https://github.com/yevhensydorov/express-workshop#readme"
+  "homepage": "https://github.com/yevhensydorov/express-workshop#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "express-formidable": "^1.0.0"
+  }
 }
