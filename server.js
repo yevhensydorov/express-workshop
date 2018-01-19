@@ -12,8 +12,10 @@ const express = require("express"),
 app.use(express.static("public"));
 app.use(formidable());
 
+let jsonPath = "/data/posts.json";
+
 app.post("/create-post", (req, res) => {
-	fs.readFile(__dirname + "/data/posts.json", (error, file) => {
+	fs.readFile(__dirname + jsonPath, (error, file) => {
 		const parsedFile = JSON.parse(file);
 		// console.log(file.toString());
 
@@ -30,11 +32,10 @@ app.get("/get-posts", (req, res) => {
 });
 
 app.get("/posts/:postId", (req, res) => {
-	res.send(`post id: ${req.params.postId}`)
-	fs.readFile(__dirname + "data/posts.json", (error, file) => {
-		// const parsedFile = JSON.parse(file);
-		// console.log(file.toString());
-		// res.send(parsedFile["req.params.postId"]);
+	let postId = req.params.postId;
+	fs.readFile(__dirname + jsonPath, (error, file) => {
+		const parsedFile = JSON.parse(file);
+		res.send(parsedFile[postId]);
 	});
 });
 
